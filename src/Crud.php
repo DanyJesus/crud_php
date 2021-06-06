@@ -5,16 +5,16 @@ require_once 'conexao.php';
 
 class Crud{
 
-function __construct()
-{
+    function __construct()
+    {
   
-}
+    }
 
      public function insert(){
        $db = new Conexao;
       
       $db->exec("INSERT INTO periodic_table (element_name,symbol, atomic_number, period)
-                      values ('Prata','p', 9, 9); "); 
+                      values ('Nitrogen','N', 7, 7); "); 
      $resultado= $db->query(" SELECT id from periodic_table  order by id DESC  limit 1;");  
       while ($row = $resultado->fetchArray()) {
       $id= $row['id'];
@@ -24,7 +24,7 @@ function __construct()
     }
     public function update($id){
         $db = new Conexao;
-     return  $db->exec("UPDATE periodic_table set symbol='yf' where id=$id");
+     return  $db->exec("UPDATE periodic_table set symbol='HH' where id=$id");
      
     }   
 
@@ -50,19 +50,16 @@ function __construct()
     }
     public function listOne($id){
         $db = new Conexao;
-     $resultado = $db->query(" SELECT id from periodic_table where id = $id ");   
+        $resultado= $db->query("SELECT Count($id) from periodic_table ;");   
+        return $resultado->fetchArray(1);   
    
-     return $resultado->fetchArray();
-         
-    
 }
      
              
     }
 
-
 //$value = new Crud();
-//$results= $value->listOne(68);
+//$results= $value->listOne(275);
 //var_dump($results);
 
 ?>
