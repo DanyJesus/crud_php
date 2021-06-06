@@ -50,13 +50,17 @@ function __construct()
     }
     public function listOne($id){
         $db = new Conexao;
-     $resultado = $db->query(" SELECT * from periodic_table where id = $id ");   
-       return $resultado ->();
+     $resultado = $db->query(" SELECT id from periodic_table where id = $id ");   
+   
+     return $resultado->fetchArray();
+         
+    
+}
      
              
     }
 
-}
+
 //$value = new Crud();
 //$results= $value->listOne(68);
 //var_dump($results);
