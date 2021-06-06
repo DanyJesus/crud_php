@@ -1,9 +1,9 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
-
 use PHPUnit\Framework\TestCase;
 use CRUD\Crud;
+
 
 /**
  * Vamos testar as funções da classe Crud.
